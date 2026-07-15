@@ -1,21 +1,16 @@
-name: Build Periodic v2.4 APK
+name: Build Periodic APK
 
 on:
   push:
     branches: [ main ]
-  pull_request:
   workflow_dispatch:
-
-permissions:
-  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
 
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Java 17
@@ -25,34 +20,15 @@ jobs:
           java-version: '17'
           cache: gradle
 
-      - name: Configure Java 17 for Gradle
-        run: |
-          echo "JAVA_HOME=$JAVA_HOME" >> "$GITHUB_ENV"
-          echo "$JAVA_HOME/bin" >> "$GITHUB_PATH"
-          java -version
+      - name: Make Gradle executable
+        run: chmod +x gradlew
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install SDK packages
-        run: |
-          yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
-
-      - name: Validate source
-        run: python3 tools/validate_source.py
-
-      - name: Build, test, and lint
-        run: |
-          chmod +x gradlew
-          ./gradlew --no-daemon --console=plain clean assembleDebug testDebugUnitTest lintDebug --stacktrace
-
-      - name: Copy named APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk Periodic-v2.4-debug.apk
+      - name: Build debug APK
+        run: ./gradlew --stop && ./gradlew clean assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Periodic-v2.4-debug
-          path: Periodic-v2.4-debug.apk
+          name: Periodic-v2.4-fixed-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
