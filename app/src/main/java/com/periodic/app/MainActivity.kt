@@ -52,7 +52,7 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        WindowInsetsHelper.applyImmersive(window)
+        WindowInsetsHelper.applyImmersive(this)
 
         choreographer = Choreographer.getInstance()
 
