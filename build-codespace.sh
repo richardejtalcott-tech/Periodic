@@ -10,6 +10,12 @@ CMDLINE_URL="https://dl.google.com/android/repository/${CMDLINE_ZIP}"
 GRADLE_TASKS=(clean assembleDebug)
 
 log() { printf '\n[%s] %s\n' "$(date +'%H:%M:%S')" "$*"; }
+
+run_gradle() {
+  export JAVA_HOME="$JAVA17"
+  export PATH="$JAVA_HOME/bin:$PATH"
+  ./gradlew --no-daemon --console=plain "$@"
+}
 fail() { echo "ERROR: $*" >&2; exit 1; }
 trap 'echo; echo "BUILD FAILED near line $LINENO. Review the error immediately above." >&2' ERR
 
@@ -89,17 +95,17 @@ python3 tools/validate_source.py
 
 log "Building Periodic 2.4 debug APK"
 chmod +x gradlew
-./gradlew --no-daemon --console=plain "${GRADLE_TASKS[@]}" --stacktrace
+run_gradle "${GRADLE_TASKS[@]}" --stacktrace
 
 APK="$PROJECT_DIR/app/build/outputs/apk/debug/app-debug.apk"
 [ -f "$APK" ] || fail "Gradle did not create $APK"
 cp -f "$APK" "$PROJECT_DIR/Periodic-v2.4-debug.apk"
 
 log "Running unit tests"
-./gradlew --no-daemon --console=plain testDebugUnitTest --stacktrace
+run_gradle testDebugUnitTest --stacktrace
 
 log "Running Android lint"
-./gradlew --no-daemon --console=plain lintDebug --stacktrace
+run_gradle lintDebug --stacktrace
 
 log "BUILD SUCCESSFUL"
 echo "APK: $PROJECT_DIR/Periodic-v2.4-debug.apk"

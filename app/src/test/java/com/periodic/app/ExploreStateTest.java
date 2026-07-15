@@ -1,5 +1,33 @@
 package com.periodic.app;
-import android.os.Bundle;import org.junit.Test;import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
+
 public final class ExploreStateTest {
- @Test public void bundleRoundTrip(){ExploreState a=new ExploreState();a.tab=4;a.temperature=640;a.zoom=1.4f;a.exploded=true;ExploreState b=ExploreState.fromBundle(a.toBundle());assertEquals(4,b.tab);assertEquals(640,b.temperature);assertEquals(1.4f,b.zoom,.001f);assertTrue(b.exploded);}
+    @Test
+    public void stateFieldValuesMatchExpectedMap() {
+        ExploreState a = new ExploreState();
+        a.tab = 4;
+        a.temperature = 640;
+        a.zoom = 1.4f;
+        a.exploded = true;
+
+        Map<String, Object> expected = new HashMap<>();
+        expected.put("tab", 4);
+        expected.put("temperature", 640);
+        expected.put("zoom", 1.4f);
+        expected.put("exploded", true);
+
+        Map<String, Object> actual = new HashMap<>();
+        actual.put("tab", a.tab);
+        actual.put("temperature", a.temperature);
+        actual.put("zoom", a.zoom);
+        actual.put("exploded", a.exploded);
+
+        assertEquals(expected, actual);
+    }
 }

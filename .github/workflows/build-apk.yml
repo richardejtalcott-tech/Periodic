@@ -25,6 +25,12 @@ jobs:
           java-version: '17'
           cache: gradle
 
+      - name: Configure Java 17 for Gradle
+        run: |
+          echo "JAVA_HOME=$JAVA_HOME" >> "$GITHUB_ENV"
+          echo "$JAVA_HOME/bin" >> "$GITHUB_PATH"
+          java -version
+
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
