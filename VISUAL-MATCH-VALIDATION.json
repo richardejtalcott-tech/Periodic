@@ -1,0 +1,25 @@
+{
+  "xml_errors": [],
+  "brace_errors": [],
+  "required": {
+    "app": true,
+    "gradle": true,
+    "gradlew": true,
+    "gradlew.bat": true,
+    "build.gradle": true,
+    "settings.gradle": true,
+    "build-codespace.sh": true
+  },
+  "glb": [
+    {
+      "file": "app/src/main/assets/periodic_table.glb",
+      "valid": true,
+      "bytes": 664224
+    },
+    {
+      "file": "app/src/main/assets/scientific_lab.glb",
+      "valid": true,
+      "bytes": 193204
+    }
+  ]
+}

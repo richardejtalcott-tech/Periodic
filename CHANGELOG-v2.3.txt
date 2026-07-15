@@ -1,0 +1,10 @@
+Periodic v2.3 source preview
+
+- Responsive safe-area canvas and scalable text layout
+- Rebuilt Explore into seven interactive modules
+- Restored dimensional atom animation and nucleus/quark explorer
+- Rebuilt Journey Into Matter with 13 stages and swipe navigation
+- Added floating 3D-style science words and particle depth behind the table
+- Preserved the v2.2 periodic-table tile design while improving atmosphere
+- Added explicit scientific-model cautions and data fallbacks
+- Added version 2.3 build metadata

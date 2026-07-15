@@ -1,0 +1,16 @@
+{
+  "name": "Periodic Android 2.4",
+  "image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "chmod +x gradlew build-codespace.sh && java -version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "mathiasfrohlich.Kotlin"
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+Periodic 2.4 build-repair release
+
+- Version bumped to 2.4.0 / code 6.
+- Replaced the Codespaces Android SDK installer that could appear stuck.
+- Uses the official current Android command-line tools archive directly.
+- Android license acceptance is non-interactive.
+- Added timestamped build progress and explicit failure location.
+- Added a Java 17 Codespaces devcontainer.
+- GitHub Actions now builds, tests, lints, names, and uploads the APK.
+- Output APK is Periodic-v2.4-debug.apk.
+- Preserves the v2.3 visual-match application source and assets.

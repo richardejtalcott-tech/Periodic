@@ -1,0 +1,4 @@
+-keep class com.google.android.filament.** { *; }
+-keep class com.periodic.app.Element { *; }
+-keep class com.periodic.app.ElementData { *; }
+-dontwarn java.lang.invoke.StringConcatFactory

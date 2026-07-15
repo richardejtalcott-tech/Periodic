@@ -1,0 +1,36 @@
+{
+  "required_root_files": {
+    "gradlew": true,
+    "gradlew.bat": true,
+    "build-codespace.sh": true,
+    "build.gradle": true,
+    "settings.gradle": true,
+    "gradle.properties": true,
+    "app/build.gradle": true,
+    "gradle/wrapper/gradle-wrapper.properties": true
+  },
+  "xml_errors": [],
+  "brace_errors": [],
+  "glb_assets": [
+    {
+      "file": "app/src/main/assets/periodic_table.glb",
+      "bytes": 664224,
+      "valid_glb_magic": true
+    },
+    {
+      "file": "app/src/main/assets/scientific_lab.glb",
+      "bytes": 193204,
+      "valid_glb_magic": true
+    }
+  ],
+  "shell_syntax": {
+    "gradlew": {
+      "passed": true,
+      "error": ""
+    },
+    "build-codespace.sh": {
+      "passed": true,
+      "error": ""
+    }
+  }
+}

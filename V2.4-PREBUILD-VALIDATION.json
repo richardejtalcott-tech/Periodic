@@ -1,0 +1,46 @@
+{
+  "version": "2.4.0",
+  "versionCode": 6,
+  "required": {
+    "app/build.gradle": true,
+    "app/src/main/AndroidManifest.xml": true,
+    "build.gradle": true,
+    "settings.gradle": true,
+    "gradle.properties": true,
+    "gradlew": true,
+    "gradlew.bat": true,
+    "build-codespace.sh": true,
+    ".github/workflows/build-apk.yml": true,
+    ".devcontainer/devcontainer.json": true
+  },
+  "xml_errors": [],
+  "brace_errors": [],
+  "shell_syntax": {
+    "gradlew": {
+      "passed": true,
+      "error": ""
+    },
+    "build-codespace.sh": {
+      "passed": true,
+      "error": ""
+    }
+  },
+  "glb_assets": [
+    {
+      "file": "app/src/main/assets/periodic_table.glb",
+      "bytes": 664224,
+      "valid_magic": true
+    },
+    {
+      "file": "app/src/main/assets/scientific_lab.glb",
+      "bytes": 193204,
+      "valid_magic": true
+    }
+  ],
+  "sdk_bootstrap": {
+    "official_tools_version": "14742923",
+    "compileSdk": 35,
+    "buildTools": "35.0.0",
+    "java": 17
+  }
+}

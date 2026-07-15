@@ -1,0 +1,10 @@
+PERIODIC v1.0 FOUNDATION
+
+1. Create a new GitHub repository named Periodic.
+2. Extract Periodic-v1-Android15-GitHub.zip.
+3. Upload everything INSIDE the Periodic-v1-Android15 folder to the repository root.
+4. Confirm the root contains .github, app, build.gradle, settings.gradle, and gradle.properties.
+5. Commit the files.
+6. Open Actions and run Build Periodic APK.
+7. Download the Periodic-v1-debug-apk artifact after a successful build.
+8. Extract it and install Periodic-v1-debug.apk.

@@ -1,0 +1,21 @@
+{
+  "settings_gradle": true,
+  "app_build_gradle": true,
+  "manifest": true,
+  "xml_files_parsed": 6,
+  "xml_errors": [],
+  "glb_assets": [
+    {
+      "file": "app/src/main/assets/periodic_table.glb",
+      "size": 664224,
+      "valid_magic": true
+    },
+    {
+      "file": "app/src/main/assets/scientific_lab.glb",
+      "size": 193204,
+      "valid_magic": true
+    }
+  ],
+  "source_files_checked": 27,
+  "brace_errors": []
+}
